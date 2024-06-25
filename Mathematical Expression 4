@@ -1,0 +1,86 @@
+The expression will be one of the following expressions:
+
+A + B = C, A - B = C and A * B = C.
+
+where A, B, C are three numbers, S is the sign between A and B, and Q is the '=' sign.
+
+If the expression is right print "Yes", Otherwise print the right answer of the expression.
+
+Input Format
+
+The first line contains the number of test cases t.
+
+The following lines contain t test cases. One test case per line.
+
+Each test case is in the format A S B Q C, where A,B and C are the numbers, S is the sign between A and B and Q is the '=' sign.
+
+Constraints
+
+1<= T <= 105
+
+0<= A,B <= 102
+
+-105 <= C <=105
+
+Output Format
+
+Print the result of each test case in a new line.
+
+In each test case, If the expression is right print "Yes", Otherwise print the right answer of the expression.
+
+Sample Input 0
+
+2
+5 + 10 = 15
+2 * 10 = 19
+Sample Output 0
+
+Yes
+20
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+
+    public static void main(String[] args) {
+  
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        scanner.nextLine(); 
+
+        for (int i = 0; i < t; i++) {
+            String line = scanner.nextLine();
+            String[] parts = line.split(" ");
+            int A = Integer.parseInt(parts[0]);
+            String S = parts[1];
+            int B = Integer.parseInt(parts[2]);
+            String Q = parts[3];
+            int C = Integer.parseInt(parts[4]);
+            int result = 0;
+            switch (S) {
+                case "+":
+                    result = A + B;
+                    break;
+                case "-":
+                    result = A - B;
+                    break;
+                case "*":
+                    result = A * B;
+                    break;
+            }
+            if (result == C) {
+                System.out.println("Yes");
+            } else {
+                System.out.println(result);
+            }
+        }
+
+        scanner.close();
+   
+    
+
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+      }
+}    
