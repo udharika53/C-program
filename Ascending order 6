@@ -1,0 +1,83 @@
+Write a program to sort the given array in ascending order.
+
+Input Format
+
+Read size of the array Read elements of the array line by line
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print elements of the array in asecending order
+
+Sample Input 0
+
+5
+54
+68
+25
+14
+74
+Sample Output 0
+
+14
+25
+54
+68
+74
+Sample Input 1
+
+4
+51
+-3
+5
+-6
+Sample Output 1
+
+-6
+-3
+5
+51
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+public static void bubbleSort(int[]a){
+    int n=a.length;
+    for(int i=0;i<n-1;i++){
+        boolean flag=false;
+        for(int j=1;j<n;j++)
+        {
+            if(a[j-1]>a[j])
+            {
+                flag=true;
+                int temp=a[j-1];
+                a[j-1]=a[j];
+                a[j]=temp;
+            }
+        }
+        if(flag==false)
+            break;
+    }
+}
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i<n;i++)
+    {
+        a[i]=sc.nextInt();
+    }
+    bubbleSort(a);
+    for(int k=0;k<n;k++)
+    {
+        System.out.println(a[k]+" ");
+    }
+    System.out.println();
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
